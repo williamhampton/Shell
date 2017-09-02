@@ -44,6 +44,6 @@ echo "Edit Nginx"
 sudo vim /etc/nginx/sites-available/$proj
 sudo ln -s /etc/nginx/sites-available/$proj /etc/nginx/sites-enabled
 sudo nginx -t
-sudo rm /etx/nginx/sites-enabled/default
+sudo rm -rf  /etc/nginx/sites-enabled/default
 sudo service nginx restart
 echo "Now your site should be running!"
