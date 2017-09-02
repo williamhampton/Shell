@@ -1,24 +1,24 @@
 #!/bin/bash
 # This is a shell script for starting a django project on ubuntu
 # using https://github.com/MikeHannon/DjangoDeployment as a reference
-echo "Whats the repository name?"
-read repo
-echo "Whats the project name?"
-read proj
-echo "Now whate is the url for your code?"
-read url
 sudo apt-get update
 sudo apt-get install python-pip python-dev nginx git
 sudo apt-get update
 sudo pip install virtualenv
+echo "What is the url for your code?"
+read url
+echo "Whats the repository name?"
+read repo
+echo "Whats the project name?"
+read proj
 git clone $url
 virtualenv venv
 source venv/bin/activate
 cd $repo
 # You may run into errors installing the requiremnets.txt, I ran into issues
-# installing mysql and had to manually install the requirements and install 
+# installing mysql and had to manually install the requirements and install
 # mysql-dev individually
-pip install -r requirments.txt
+pip install -r requirements.txt
 pip install django bcrypt django-extensions
 pip install gunicorn
 cd $proj
